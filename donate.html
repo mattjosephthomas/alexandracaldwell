@@ -47,12 +47,24 @@ a{color:#061a4b}a:hover{color:#e3a642}
 .cx-stat .cx-sl{font-size:16px;line-height:1.45;color:#c6cfe4}
 .cx-card{background:#ffffff;border:1px solid #d9dfea;border-radius:10px;padding:32px;box-sizing:border-box;display:flex;flex-direction:column;gap:14px;flex:1 1 250px;min-width:0;text-decoration:none;color:inherit}
 .cx-card:hover{border-color:#e3a642;box-shadow:0 10px 30px rgba(6,26,75,0.08)}
+.cx-nav-toggle{position:absolute;opacity:0;width:1px;height:1px;overflow:hidden;pointer-events:none}
+.cx-menu-btn{display:none}
+@media (max-width:900px){
+  .cx-menu-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 14px;border-radius:8px;border:2px solid rgba(255,255,255,0.45);color:#ffffff;cursor:pointer;margin-left:auto;font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;letter-spacing:0.1em;text-transform:uppercase}
+  .cx-nav-toggle:focus-visible ~ .cx-menu-btn{outline:3px solid #e3a642;outline-offset:3px}
+  .cx-nav{display:none!important;flex-direction:column!important;align-items:stretch!important;flex:1 1 100%!important;gap:2px!important;padding-top:10px;border-top:1px solid #2d4480;justify-content:flex-start!important}
+  .cx-nav-toggle:checked ~ .cx-nav{display:flex!important}
+  .cx-nav a{font-size:18px;padding:13px 8px;border-radius:0;border-bottom:1px solid #16306a}
+  .cx-nav a.cx-on{box-shadow:none;color:#e3a642}
+  .cx-nav a.cx-btn{margin:14px 0 6px!important;align-self:flex-start;border-bottom:0;padding:0 24px!important;min-height:48px}
+  .cx-nav-toggle:checked ~ .cx-menu-btn .cx-ico-open{display:none}
+  .cx-nav-toggle:not(:checked) ~ .cx-menu-btn .cx-ico-close{display:none}
+}
 @media (max-width:720px){
   .cx-wrap{padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
   .cx-h1{font-size:54px!important}
   .cx-h2{font-size:34px}
   .cx-pad-xl{padding-top:64px!important;padding-bottom:64px!important}
-  .cx-nav{justify-content:center}
   .cx-grid-3,.cx-grid-2{grid-template-columns:repeat(1, minmax(0, 1fr))!important}
 }
 .cx-error{margin:0;font-size:16px;color:#b3261e;flex:1 1 100%}
@@ -68,6 +80,8 @@ a{color:#061a4b}a:hover{color:#e3a642}
       <a href="index.html" style="display: inline-flex; align-items: center; flex: 0 0 auto" aria-label="Alexandra Caldwell — home">
         <img src="images/logo.png" alt="Alexandra Caldwell" style="height: 64px; width: auto; display: block">
       </a>
+      <input type="checkbox" id="nav-toggle" class="cx-nav-toggle">
+      <label for="nav-toggle" class="cx-menu-btn" aria-label="Open menu"><svg class="cx-ico-open" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg><svg class="cx-ico-close" aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg>Menu</label>
       <nav class="cx-nav" aria-label="Main" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px; flex: 1 1 520px; justify-content: flex-end">
         <a href="meet.html">Meet Alexandra</a>
         <a href="priorities.html">Priorities</a>
