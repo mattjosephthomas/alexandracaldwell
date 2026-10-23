@@ -74,6 +74,30 @@ a{color:#061a4b}a:hover{color:#e3a642}
 .cx-life span{display:block;padding:10px 4px 12px;text-align:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:15px;line-height:1.3;color:#061a4b}
 @media (max-width:900px){.cx-life{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 16px}}
 @media (max-width:520px){.cx-life{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.cx-life span{font-size:14px}}
+.cx-endorse-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:24px;align-items:stretch}
+.cx-endorse{margin:0;background:#ffffff;border:1px solid #d9dfea;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.cx-endorse-media{position:relative;aspect-ratio:4/3;background:#061a4b;overflow:hidden;flex:0 0 auto}
+.cx-endorse-media img{width:100%;height:100%;object-fit:cover;display:block}
+.cx-endorse-media .lh{position:absolute;right:-18px;bottom:-26px;height:118%;width:auto;opacity:0.07}
+.cx-endorse-media .mk{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-size:170px;line-height:1;color:#e3a642;padding-top:56px}
+.cx-endorse-media .badge{position:absolute;left:22px;bottom:-1px;width:54px;height:46px;background:#e3a642;border-radius:10px 10px 0 0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',Georgia,serif;font-size:52px;line-height:1;color:#061a4b;padding-top:22px}
+.cx-endorse-body{padding:26px 28px 26px;display:flex;flex-direction:column;gap:18px;flex:1 1 auto}
+.cx-endorse blockquote{margin:0;font-size:17px;line-height:1.65;color:#2b3350}
+.cx-endorse figcaption{margin-top:auto;padding-top:14px;border-top:1px solid #d9dfea;display:flex;flex-direction:column;gap:2px}
+.cx-endorse figcaption b{font-family:'Oswald',sans-serif;font-weight:600;font-size:19px;color:#061a4b}
+.cx-endorse figcaption span{font-size:15px;color:#6b7490}
+.cx-car{position:relative}
+.cx-car-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.cx-car-track::-webkit-scrollbar{display:none}
+.cx-car-track .cx-endorse{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start}
+.cx-car-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:6px}
+.cx-car-btn{width:48px;height:48px;border-radius:50%;border:2px solid #061a4b;background:#ffffff;color:#061a4b;font-size:22px;line-height:1;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:background .15s,color .15s}
+.cx-car-btn:hover,.cx-car-btn:focus-visible{background:#061a4b;color:#ffffff}
+.cx-car-dots{display:flex;gap:8px}
+.cx-car-dots i{width:9px;height:9px;border-radius:50%;background:#c9d3e6;display:block;transition:background .2s,transform .2s}
+.cx-car-dots i.on{background:#e3a642;transform:scale(1.25)}
+@media (max-width:980px){.cx-car-track .cx-endorse{flex-basis:calc((100% - 22px)/2)}}
+@media (max-width:640px){.cx-car-track{align-items:flex-start}.cx-car-track .cx-endorse{flex-basis:86%}.cx-endorse-body{padding:22px 22px}}
 </style>
 </head>
 <body>
@@ -257,109 +281,83 @@ a{color:#061a4b}a:hover{color:#e3a642}
         <span class="cx-eyebrow" style="color: #2a5ab8">What neighbours are saying</span>
         <h2 class="cx-h2" style="color: #061a4b">Endorsements</h2>
       </div>
-      <div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: stretch">
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">Bronte and Ward 1 are at a turning point. Alexandra understands our community, listens to residents and businesses, and is ready to work with me to advance our approved plans for better parks, an enhanced waterfront, a vibrant Bronte Village main street, and safe neighbourhoods for everyone.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 14px; border-top: 1px solid #d9dfea; display: flex; align-items: center; gap: 14px">
-            <img src="images/endorse-jonathan-sq.jpg" alt="Alexandra Caldwell with Jonathan McNeice" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 3px solid #e3a642; display: block">
-            <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
-              <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Jonathan McNeice</span>
-              <span style="font-size: 15px; color: #6b7490">Ward 1 Town Councillor</span>
-            </span>
-          </figcaption>
+      <div class="cx-endorse-grid">
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-jonathan.jpg" alt="Alexandra Caldwell with Jonathan McNeice" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>Bronte and Ward 1 are at a turning point. Alexandra understands our community, listens to residents and businesses, and is ready to work with me to advance our approved plans for better parks, an enhanced waterfront, a vibrant Bronte Village main street, and safe neighbourhoods for everyone.</blockquote>
+            <figcaption><b>Jonathan McNeice</b><span>Ward 1 Town Councillor</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">Alexandra understands the needs of the Bronte community and local businesses. I am confident she will represent us well and bring a fresh perspective to local issues.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 14px; border-top: 1px solid #d9dfea; display: flex; align-items: center; gap: 14px">
-            <img src="images/endorse-yury-sq.jpg" alt="Alexandra Caldwell with Yury Wu-Parra" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 3px solid #e3a642; display: block">
-            <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
-              <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Yury Wu-Parra</span>
-              <span style="font-size: 15px; color: #6b7490">Taste of Colombia Fair Trade Coffee &amp; Gift Shop</span>
-            </span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-yury.jpg" alt="Alexandra Caldwell with Yury Wu-Parra" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>Alexandra understands the needs of the Bronte community and local businesses. I am confident she will represent us well and bring a fresh perspective to local issues.</blockquote>
+            <figcaption><b>Yury Wu-Parra</b><span>Taste of Colombia Fair Trade Coffee &amp; Gift Shop</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">I would say that endorsing Alexandra for Ward 1 Councillor should be on everyone's mind because we need her style of representation to get the job done in Bronte. She's a smart woman who knows her way around planning and strategy, and that's exactly what we need for our marina to thrive, attract investment and tourism, and make the most of our parks and our great Bronte Village. She cares about helping people, with compassion, knowledge, and above all, the spirit that drives her. I will happily endorse Alexandra Caldwell for our Ward 1 Councillor.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 14px; border-top: 1px solid #d9dfea; display: flex; align-items: center; gap: 14px">
-            <img src="images/endorse-dino-sq.jpg" alt="Alexandra Caldwell with Dino Di Gregorio" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 3px solid #e3a642; display: block">
-            <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
-              <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Dino Di Gregorio</span>
-              <span style="font-size: 15px; color: #6b7490">Former CBC senior video editor</span>
-            </span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-dino.jpg" alt="Alexandra Caldwell with Dino Di Gregorio" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>I would say that endorsing Alexandra for Ward 1 Councillor should be on everyone's mind because we need her style of representation to get the job done in Bronte. She's a smart woman who knows her way around planning and strategy, and that's exactly what we need for our marina to thrive, attract investment and tourism, and make the most of our parks and our great Bronte Village. She cares about helping people, with compassion, knowledge, and above all, the spirit that drives her. I will happily endorse Alexandra Caldwell for our Ward 1 Councillor.</blockquote>
+            <figcaption><b>Dino Di Gregorio</b><span>Former CBC senior video editor</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">Alexandra is super smart, straight-up, and genuinely cares about people and our world. That's exactly who you want representing you in government.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 14px; border-top: 1px solid #d9dfea; display: flex; align-items: center; gap: 14px">
-            <img src="images/endorse-brian-sq.jpg" alt="Alexandra Caldwell with Brian Hassett" style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 3px solid #e3a642; display: block">
-            <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
-              <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Brian Hassett</span>
-              <span style="font-size: 15px; color: #6b7490">Author and Bronte resident</span>
-            </span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-brian.jpg" alt="Alexandra Caldwell with Brian Hassett" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>Alexandra is super smart, straight-up, and genuinely cares about people and our world. That's exactly who you want representing you in government.</blockquote>
+            <figcaption><b>Brian Hassett</b><span>Author and Bronte resident</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">I've lived in and loved Bronte for almost 13 years. What first attracted me was its quiet, gentle atmosphere and strong sense of community. I've known Alexandra for most of those years and have always admired her genuine interest in and commitment to making our neighbourhoods even better places to live. I wholeheartedly endorse Alexandra Caldwell for Ward 1 Town Councillor. I believe she will give her very best to serving all the communities that make up Ward 1.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 14px; border-top: 1px solid #d9dfea; display: flex; align-items: center; gap: 14px">
-            <img src="images/endorse-linda-sq.jpg" alt="Alexandra Caldwell with Linda B." style="width: 84px; height: 84px; border-radius: 50%; object-fit: cover; flex: 0 0 auto; border: 3px solid #e3a642; display: block">
-            <span style="display: flex; flex-direction: column; gap: 2px; min-width: 0">
-              <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Linda B.</span>
-              <span style="font-size: 15px; color: #6b7490">Bronte Village resident</span>
-            </span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-linda.jpg" alt="Alexandra Caldwell with Linda B." loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>I've lived in and loved Bronte for almost 13 years. What first attracted me was its quiet, gentle atmosphere and strong sense of community. I've known Alexandra for most of those years and have always admired her genuine interest in and commitment to making our neighbourhoods even better places to live. I wholeheartedly endorse Alexandra Caldwell for Ward 1 Town Councillor. I believe she will give her very best to serving all the communities that make up Ward 1.</blockquote>
+            <figcaption><b>Linda B.</b><span>Bronte Village resident</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">As the founder of Bronte Lake Notes and a longtime Bronte resident, I am pleased to endorse Alexandra Caldwell for Ward 1 Town Council. Alexandra’s passion for arts and culture as well as her community spirit I feel will continue to make Ward 1 a wonderful and vibrant place to live.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 8px; border-top: 1px solid #d9dfea; display: flex; flex-direction: column; gap: 2px">
-            <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Mike Cuttle</span>
-            <span style="font-size: 15px; color: #6b7490">Founder of Bronte Lake Notes</span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-mike.jpg" alt="Festival lights over the Bronte waterfront stage" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>As the founder of Bronte Lake Notes and a longtime Bronte resident, I am pleased to endorse Alexandra Caldwell for Ward 1 Town Council. Alexandra’s passion for arts and culture as well as her community spirit I feel will continue to make Ward 1 a wonderful and vibrant place to live.</blockquote>
+            <figcaption><b>Mike Cuttle</b><span>Founder of Bronte Lake Notes</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">As part of Bronte's hospitality community, I know how important a thriving local business district is to our village. Alexandra understands the value of supporting local businesses, creating a vibrant waterfront, and making Bronte a destination where residents and visitors alike want to spend time.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 8px; border-top: 1px solid #d9dfea; display: flex; flex-direction: column; gap: 2px">
-            <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Doug Greco</span>
-            <span style="font-size: 15px; color: #6b7490">President, Catch Hospitality</span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-doug.jpg" alt="Sailboats docked in Bronte Harbour" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>As part of Bronte's hospitality community, I know how important a thriving local business district is to our village. Alexandra understands the value of supporting local businesses, creating a vibrant waterfront, and making Bronte a destination where residents and visitors alike want to spend time.</blockquote>
+            <figcaption><b>Doug Greco</b><span>President, Catch Hospitality</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">I have always known Alexandra to be intelligent, thoughtful, honest, and dependable. She is an active listener who brings valuable insight to issues and has a natural ability to work through problems with care and good judgment. Alexandra is a lifelong learner and a strong leader who genuinely values people and their perspectives. Above all, she is deeply family-centred and approaches her commitments with integrity, compassion, and reliability.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 8px; border-top: 1px solid #d9dfea; display: flex; flex-direction: column; gap: 2px">
-            <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Anita A.</span>
-            <span style="font-size: 15px; color: #6b7490">Fellow book club member &amp; small business owner</span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-anita.jpg" alt="Shops and patios in Bronte Village" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>I have always known Alexandra to be intelligent, thoughtful, honest, and dependable. She is an active listener who brings valuable insight to issues and has a natural ability to work through problems with care and good judgment. Alexandra is a lifelong learner and a strong leader who genuinely values people and their perspectives. Above all, she is deeply family-centred and approaches her commitments with integrity, compassion, and reliability.</blockquote>
+            <figcaption><b>Anita A.</b><span>Fellow book club member &amp; small business owner</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">What I admire about Alexandra is how much she genuinely cares about people. She is kind, thoughtful, grounded, and wants to make a positive difference in our ward. She cares about keeping our neighbourhoods safe and ensuring that development respects the needs of those who already live here. She has stepped forward with a sincere desire to serve, listen, and understand what matters to people. I believe she would represent our ward with integrity and compassion, and I'm excited to see the positive difference she can make.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 8px; border-top: 1px solid #d9dfea; display: flex; flex-direction: column; gap: 2px">
-            <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Laxmi S.</span>
-            <span style="font-size: 15px; color: #6b7490">Neighbour, member of a local parent group in Bronte Village</span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-laxmi.jpg" alt="The splash pad at a Ward 1 park" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>What I admire about Alexandra is how much she genuinely cares about people. She is kind, thoughtful, grounded, and wants to make a positive difference in our ward. She cares about keeping our neighbourhoods safe and ensuring that development respects the needs of those who already live here. She has stepped forward with a sincere desire to serve, listen, and understand what matters to people. I believe she would represent our ward with integrity and compassion, and I'm excited to see the positive difference she can make.</blockquote>
+            <figcaption><b>Laxmi S.</b><span>Neighbour, member of a local parent group in Bronte Village</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">I've known Alexandra for 18 years, and what has always impressed me is her ability to find solutions, get things done, and approach challenges with common sense and determination. She is hardworking, dependable, and genuinely cares about people. I'm proud to endorse her.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 8px; border-top: 1px solid #d9dfea; display: flex; flex-direction: column; gap: 2px">
-            <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Paul S.</span>
-            <span style="font-size: 15px; color: #6b7490">Long-time resident, Lakeshore Woods</span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-paul.jpg" alt="A Ward 1 park in autumn" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>I've known Alexandra for 18 years, and what has always impressed me is her ability to find solutions, get things done, and approach challenges with common sense and determination. She is hardworking, dependable, and genuinely cares about people. I'm proud to endorse her.</blockquote>
+            <figcaption><b>Paul S.</b><span>Long-time resident, Lakeshore Woods</span></figcaption>
+          </div>
         </figure>
-        <figure class="cx-quote-card" style="margin: 0">
-          <span aria-hidden="true" style="font-family: 'Playfair Display', Georgia, serif; font-size: 64px; line-height: 0.6; color: #e3a642; display: block">“</span>
-          <blockquote style="margin: 0; font-size: 17px; line-height: 1.65; color: #2b3350">What stands out about Alexandra is her ability to stay calm under pressure, think creatively, and bring people with different perspectives together. I've seen her navigate challenging situations with confidence and determination. Her enthusiasm, resourcefulness, and deep love for Oakville are why I'm proud to endorse her.</blockquote>
-          <figcaption style="margin-top: auto; padding-top: 8px; border-top: 1px solid #d9dfea; display: flex; flex-direction: column; gap: 2px">
-            <span style="font-family: 'Oswald', sans-serif; font-weight: 600; font-size: 18px; color: #061a4b">Oxana V.</span>
-            <span style="font-size: 15px; color: #6b7490">Long-time resident, Lakeshore Woods</span>
-          </figcaption>
+        <figure class="cx-endorse">
+          <div class="cx-endorse-media"><img src="images/endorse-oxana.jpg" alt="Lakeside path along the Ward 1 waterfront" loading="lazy"><span class="badge" aria-hidden="true">“</span></div>
+          <div class="cx-endorse-body">
+            <blockquote>What stands out about Alexandra is her ability to stay calm under pressure, think creatively, and bring people with different perspectives together. I've seen her navigate challenging situations with confidence and determination. Her enthusiasm, resourcefulness, and deep love for Oakville are why I'm proud to endorse her.</blockquote>
+            <figcaption><b>Oxana V.</b><span>Long-time resident, Lakeshore Woods</span></figcaption>
+          </div>
         </figure>
       </div>
     </div>
