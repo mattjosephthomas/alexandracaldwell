@@ -65,6 +65,15 @@ a{color:#061a4b}a:hover{color:#e3a642}
 }
 .cx-error{margin:0;font-size:16px;color:#b3261e;flex:1 1 100%}
 .cx-thanks{margin:0;font-size:16px;color:#e3a642;flex:1 1 100%}
+.cx-life{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:22px;margin:0;padding:0;list-style:none}
+.cx-life li{background:#fbf4e6;padding:10px 10px 0;border-radius:4px;box-shadow:0 10px 24px rgba(0,0,0,0.28);transform:rotate(-2deg);transition:transform .2s ease}
+.cx-life li:nth-child(even){transform:rotate(2deg) translateY(8px)}
+.cx-life li:nth-child(3n){transform:rotate(-1deg) translateY(-4px)}
+.cx-life li:hover{transform:rotate(0) scale(1.04)}
+.cx-life img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:2px}
+.cx-life span{display:block;padding:10px 4px 12px;text-align:center;font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;font-size:15px;line-height:1.3;color:#061a4b}
+@media (max-width:900px){.cx-life{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 16px}}
+@media (max-width:520px){.cx-life{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 14px}.cx-life span{font-size:14px}}
 </style>
 </head>
 <body>
@@ -103,6 +112,7 @@ a{color:#061a4b}a:hover{color:#e3a642}
         <p style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 28px; line-height: 1.35; color: #e3a642; max-width: 600px">Most days, I begin or end with a walk by the lake.</p>
         <p class="cx-prose-light" style="max-width: 600px">In winter, the waterfront can be quiet and windswept. In summer, it becomes one of the liveliest places in our community. I have walked it through every season and in every kind of weather, sometimes with my family, sometimes with a friend and sometimes alone with my thoughts.</p>
         <p class="cx-prose-light" style="max-width: 600px">Those walks remind me why this place matters so much to me.</p>
+        <p class="cx-prose-light" style="max-width: 600px">When I’m not by the lake, you’ll find me sketching local landmarks, paddling Bronte Creek or playing tennis with my husband at Sovereign Park. He’s an early morning runner on our local trail, and our daughter loves BHYC summer sailing school, our neighbourhood playgrounds and, of course, our local ice cream shops.</p>
       </div>
       <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
         <div style="position: relative; width: 100%; max-width: 440px">
@@ -110,6 +120,16 @@ a{color:#061a4b}a:hover{color:#e3a642}
           <img src="images/park.jpg" alt="Alexandra walking through a lakeside park in Bronte" style="position: relative; width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center 25%; border-radius: 10px; display: block">
         </div>
       </div>
+    </div>
+    <div class="cx-wrap" style="position: relative; padding-top: 24px; padding-bottom: 16px">
+      <ul class="cx-life" aria-label="Life in Ward 1">
+        <li><img src="images/life-sketch.jpg" alt="Alexandra's watercolour sketch of a café in Oakville" loading="lazy"><span>Sketching local landmarks</span></li>
+        <li><img src="images/life-paddling.jpg" alt="Alexandra and her daughter in life jackets by their kayak on the shore" loading="lazy"><span>Paddling Bronte Creek</span></li>
+        <li><img src="images/life-tennis.jpg" alt="Alexandra, her husband and daughter with tennis racquets" loading="lazy"><span>Tennis at Sovereign Park</span></li>
+        <li><img src="images/life-running.jpg" alt="Alexandra and her husband at the Bronte Harbour run" loading="lazy"><span>Early mornings on the trail</span></li>
+        <li><img src="images/life-sailing.jpg" alt="Alexandra's daughter rigging a dinghy at BHYC sailing school" loading="lazy"><span>BHYC summer sailing</span></li>
+        <li><img src="images/life-icecream.jpg" alt="Alexandra and her daughter sharing ice cream cones in sun hats" loading="lazy"><span>Our local ice cream shops</span></li>
+      </ul>
     </div>
     <div class="cx-wrap" style="padding-top: 40px; padding-bottom: 64px">
       <div style="border-top: 1px solid #2d4480; padding-top: 36px; display: flex; flex-wrap: wrap; gap: 18px 40px">
