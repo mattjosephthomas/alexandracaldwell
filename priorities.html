@@ -68,10 +68,25 @@ a{color:#061a4b}a:hover{color:#e3a642}
 }
 .cx-error{margin:0;font-size:16px;color:#b3261e;flex:1 1 100%}
 .cx-thanks{margin:0;font-size:16px;color:#e3a642;flex:1 1 100%}
+.cx-alert{display:block;background:#d9381e;color:#ffffff;text-decoration:none;font-family:'Source Sans 3',system-ui,sans-serif;position:relative;z-index:60}
+.cx-alert:hover,.cx-alert:focus-visible{background:#b92d16;color:#ffffff}
+.cx-alert-in{max-width:1180px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:10px 16px;flex-wrap:wrap;text-align:center}
+.cx-alert b{font-family:'Oswald',sans-serif;font-weight:700;font-size:19px;letter-spacing:0.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.cx-alert b:before{content:'';width:10px;height:10px;border-radius:50%;background:#ffd166;box-shadow:0 0 0 0 rgba(255,209,102,.8);animation:cxPulse 1.6s infinite}
+.cx-alert span{font-size:17px;font-weight:600}
+.cx-alert u{text-decoration:none;font-weight:700;border-bottom:2px solid #ffd166;white-space:nowrap}
+@keyframes cxPulse{0%{box-shadow:0 0 0 0 rgba(255,209,102,.8)}70%{box-shadow:0 0 0 10px rgba(255,209,102,0)}100%{box-shadow:0 0 0 0 rgba(255,209,102,0)}}
+@media (prefers-reduced-motion:reduce){.cx-alert b:before{animation:none}}
+@media (max-width:600px){.cx-alert-in{padding:10px 14px;gap:4px 10px}.cx-alert b{font-size:17px}.cx-alert span{font-size:15px}}
 </style>
 </head>
 <body>
 <div style="font-family: 'Source Sans 3', sans-serif; color: #1f2740; background: #ffffff; width: 100%; min-width: 0">
+
+  <!-- ===== Election-day announcement ===== -->
+  <a class="cx-alert" href="vote.html">
+    <div class="cx-alert-in"><b>Vote today</b><span>Polls are open 10 a.m. to 8 p.m.</span><u>Learn how, where and when to vote →</u></div>
+  </a>
 
   <!-- ===== Header ===== -->
   <header style="background: #061a4b; color: #ffffff; border-top: 4px solid #2a5ab8">
